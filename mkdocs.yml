@@ -1,0 +1,7 @@
+site_name: Lugo's Notebook
+nav: 
+  - Home: index.md
+  - about Me : slogan.md
+  - python : pythonguide.md
+theme:
+  name: material
