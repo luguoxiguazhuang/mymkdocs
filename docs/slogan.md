@@ -1,2 +1,3 @@
 # set sail from hsre...
 ## $a^2=c^2$
+$p(x|y) = \frac{p(y|x)p(x)}{p(y)}$, \(p(x|y) = \frac{p(y|x)p(x)}{p(y)}\)
