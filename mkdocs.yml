@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: Lugo's Notebook
 nav: 
-  - Home: home.md 
+  - Home: index.md 
   - Toolbox : Toolbox.md
   - Study Sources : study_srcs.md
   - CS Learning : 
