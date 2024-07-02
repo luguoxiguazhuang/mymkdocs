@@ -4,8 +4,45 @@ nav:
   - Home: index.md
   - about Me : slogan.md
   - python : pythonguide.md 
+  - Toolbox : Toolbox.md
+  - Study Sources : study_srcs.md
 theme:
   name: material
+  font:
+    text: Open Sans
+  features:
+    - content.code.select
+    - content.code.annotate
+    - content.tabs.link 
+    - content.footnote.tooltips
+  icon:
+    annotation: material/arrow-right-circle
+    admonition:  
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+  palette: 
+  # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/lightbulb 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+    
 markdown_extensions:
 
   # Python Markdown
@@ -23,20 +60,42 @@ markdown_extensions:
       generic: true
   - pymdownx.betterem:
       smart_enable: all
-  - pymdownx.caret
+  - pymdownx.caret:
+      smart_insert: true
+      insert: true
+      superscript: true
+
   - pymdownx.details
+  - pymdownx.critic
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.highlight
+      options:
+        custom_icons:
+          - overrides/.icons
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.mark
+  - pymdownx.snippets
   - pymdownx.smartsymbols
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+extra_javascript:
+  - javascripts/mathjax.js 
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+extra_css:
+  - stylesheets/extra.css
+
 
