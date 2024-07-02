@@ -295,6 +295,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      shell
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#markdown" class="md-nav__link">
     <span class="md-ellipsis">
       markdown
@@ -317,6 +326,30 @@
   <a href="#mermaid" class="md-nav__link">
     <span class="md-ellipsis">
       mermaid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      WSL
     </span>
   </a>
   
@@ -454,6 +487,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      shell
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#markdown" class="md-nav__link">
     <span class="md-ellipsis">
       markdown
@@ -486,6 +528,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      WSL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -504,6 +570,68 @@
 <h1 id="toolbox">Toolbox<a class="headerlink" href="#toolbox" title="Permanent link">&para;</a></h1>
 <h2 id="mkdocs">mkdocs<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h2>
 <p><a class="md-button" href="https://squidfunk.github.io/mkdocs-material/">mkdocs instructions</a></p>
+<h2 id="shell">shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
+<p>1.shell中导航</p>
+<ul>
+<li>如果某个路径以 / 开头，那么它是一个 <strong>绝对路径</strong>，其他的都是 <strong>相对路径</strong> 。</li>
+<li>. 表示的是 <strong>当前目录</strong> ，而 .. 表示 <strong>上级目录</strong></li>
+</ul>
+<p>2.在程序间创建连接</p>
+<ul>
+<li>
+<p>重定向输入流、输出流</p>
+<p><mark class="critic">&lt; file</mark>:重定向输出流 eg:echo hello &gt; hello.txt</p>
+<p><mark class="critic">&gt; file</mark>:重定向输入流</p>
+</li>
+<li>
+<p>管道</p>
+<p>| 操作符允许我们将一个程序的输出和另外一个程序的输入连接起来</p>
+</li>
+</ul>
+<p>3.Command</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <a href="https://www.runoob.com/linux/linux-command-manual.html">Linux命令大全</a></p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> 用man程序： man + 程序名 展示用户手册
+* 标记和选项：- 开头，并可以改变程序的行为。eg: 在执行程序时--help 可以打印帮助信息  </p>
+<details class="note">
+<summary>Important Command</summary>
+<ul>
+<li><mark class="critic">sudo</mark>:以 su（super user 或 root 的简写）的身份执行一些操作</li>
+</ul>
+<details class="warning">
+<summary>Warning: shell权限始终为当前用户</summary>
+<p>sudo echo 3 &gt; brightness 报错</p>
+<p>原因：关于 shell，有件事我们必须要知道。|、&gt;、和 &lt; 是通过 shell 执行的，而不是被各个程序单独执行。 echo 等程序并不知道 | 的存在，它们只知道从自己的输入输出流中进行读写。 对于上面这种情况， shell (权限为您的当前用户) 在设置 sudo echo 前尝试打开 brightness 文件并写入，但是系统拒绝了 shell 的操作因为此时 shell 不是根用户。应改为echo 3 | sudo tee brightness</p>
+</details>
+<ul>
+<li><mark class="critic">mkdir</mark>:生成文件夹</li>
+<li><mark class="critic">mv</mark>:用于重命名或移动文件<ul>
+<li>mv source_file(文件) dest_file(文件):将源文件名 source_file 改为目标文件名 dest_file</li>
+<li>mv source_file(文件) dest_directory(目录):dest_directory(目录)将文件 source_file 移动到目标目录 dest_directory 中</li>
+<li>mv source_directory(目录) dest_directory(目录):目录名 dest_directory 已存在，将 source_directory 移动到目录名 dest_directory 中；目录名 dest_directory 不存在则 source_directory 改名为目录名 dest_directory</li>
+</ul>
+</li>
+<li><mark class="critic">cp</mark>:用于复制文件或目录.cp [选项] 源文件 目标文件</li>
+<li><mark class="critic">ls</mark>:打印当前目录下文件<ul>
+<li>missing:~$ ls -l /home ,输出drwxr-xr-x 1 missing  users  4096 Jun 15  2019 missing。首先，本行第一个字符 d 表示 missing 是一个目录。然后接下来的九个字符，每三个字符构成一组。 （rwx）. 它们分别代表了文件所有者（missing），用户组（users） 以及其他所有人具有的权限。其中 - 表示该用户不具备相应的权限。r:read w:write x:可执行</li>
+</ul>
+</li>
+<li><mark class="critic">read</mark>:标准输入</li>
+<li><mark class="critic">echo</mark>:echo命令用于在shell中打印shell变量的值或直接输出指定的字符串。echo命令的基本用法是在命令后面跟上要输出的文本。<ul>
+<li>只输出字符串可不加“" eg:echo This is a test</li>
+<li>-n表示不换行输出。默认自动换行</li>
+<li>换行输出：echo -e "OK! \n"；不换行输出：echo -e "OK! \c" </li>
+<li>用于显示变量的值，例如：name="John" echo "My name is $name"。</li>
+<li>输出转义字符，如echo \"Hello,World!\";echo -e:开始转义</li>
+<li>输出特殊字符，如echo "The price is $100"</li>
+<li>结合管道和重定向操作符一起使用，以将输出传递给其他命令或文件。</li>
+<li>原样输出字符串，不进行转义或取变量(用单引号)。eg: echo '$name\"'</li>
+<li>显示命令执行结果 echo <code>date</code> 注意： 这里使用的是反引号 `, 而不是单引号 '</li>
+</ul>
+</li>
+<li><mark class="critic">which</mark>:查找绝对路径。eg:which echo</li>
+<li><mark class="critic">pwd</mark>:获取当前工作目录绝对路径</li>
+</ul>
+</details>
 <h2 id="markdown">markdown<a class="headerlink" href="#markdown" title="Permanent link">&para;</a></h2>
 <h3 id="syntax">syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
 <ul>
@@ -515,6 +643,11 @@
 <ul>
 <li><a href="https://squidfunk.github.io/mkdocs-material/reference/diagrams/">mkdocs supported</a></li>
 <li>others</li>
+</ul>
+<h2 id="environment">environment<a class="headerlink" href="#environment" title="Permanent link">&para;</a></h2>
+<h3 id="wsl">WSL<a class="headerlink" href="#wsl" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/">WSL Documentation</a></li>
 </ul>
 
 
