@@ -7,5 +7,5 @@
 * [latex](https://latex-tutorial.com/tutorials/amsmath/)
 * [CSS classes](*)
 ### mermaid
-* mkdocs supported
+* [mkdocs supported](https://squidfunk.github.io/mkdocs-material/reference/diagrams/)
 * others

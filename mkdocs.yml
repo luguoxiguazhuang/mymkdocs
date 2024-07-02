@@ -1,11 +1,11 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: Lugo's Notebook
 nav: 
-  - Home: index.md
-  - about Me : slogan.md
-  - python : pythonguide.md 
+  - Home: home.md 
   - Toolbox : Toolbox.md
   - Study Sources : study_srcs.md
+  - CS Learning : 
+    - Digital Design : CSlearning/DD.md
 theme:
   name: material
   font:
@@ -31,18 +31,7 @@ theme:
       example: octicons/beaker-16
       quote: octicons/quote-16
   palette: 
-  # Palette toggle for light mode
-    - scheme: default
-      toggle:
-        icon: material/lightbulb 
-        name: Switch to dark mode
-
-    # Palette toggle for dark mode
-    - scheme: slate
-      toggle:
-        icon: material/lightbulb-outline
-        name: Switch to light mode
-    
+    primary: blue grey
 markdown_extensions:
 
   # Python Markdown
@@ -92,6 +81,8 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+plugins:
+  - glightbox
 extra_javascript:
   - javascripts/mathjax.js 
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
