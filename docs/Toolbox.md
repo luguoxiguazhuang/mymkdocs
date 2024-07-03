@@ -2,9 +2,32 @@
 ## mkdocs
 [mkdocs instructions](https://squidfunk.github.io/mkdocs-material/){ .md-button }
 ## shell
+[shell 编程](https://www.shellscript.sh/){ .md-button }
+
+### shell 编程要点
+<div class="grid cards" markdown>
+
+-   :toolbox:{ .lg .middle } __variables__
+
+    ---
+    * 变量都以字符串形式储存。hello world是两个参数，“hello world”是一个参数。
+    * MY_MESSAGE=Hello  中间不可加空格，否则认为是命令
+    * 访问值"\${MY_MESSAGE}"eg:  "\${USER_NAME}_file"当然{}在变量单独出现时可消去，即$MY_MESSAGE也可以访问值
+    * Scope:运行脚本产生新的shell，破坏interactive shell，interactive shell中的变量赋值在新shell中不可见。除非：
+        
+        1.在interactive shell中使用export MY_MESSAGE=Hello  
+        
+        2.在interface中运行脚本。命令为："." eg: . ./script.sh
+
+
+
+
+</div>
+
 1.shell中导航
 
 * 如果某个路径以 / 开头，那么它是一个 **绝对路径**，其他的都是 **相对路径** 。
+
 * . 表示的是 **当前目录** ，而 .. 表示 **上级目录**
 
 2.在程序间创建连接
@@ -19,12 +42,20 @@
 
     | 操作符允许我们将一个程序的输出和另外一个程序的输入连接起来
 
-3.Command
+3.Shell函数
+
+:arrow_right: [shell函数菜鸟教程](https://www.runoob.com/linux/linux-shell-func.html)
+
+4.Command
 
 :arrow_right: [Linux命令大全](https://www.runoob.com/linux/linux-command-manual.html)
 
+:arrow_right: [tldr简明版man](https://tldr.sh/)
+
 :arrow_right: 用man程序： man + 程序名 展示用户手册
-* 标记和选项：- 开头，并可以改变程序的行为。eg: 在执行程序时--help 可以打印帮助信息  
+
+* 标记和选项：- 开头，并可以改变程序的行为。eg: 在执行程序时--help 可以打印帮助信息 
+
 ??? note "Important Command"
     * {==sudo==}:以 su（super user 或 root 的简写）的身份执行一些操作
     
@@ -34,6 +65,8 @@
         原因：关于 shell，有件事我们必须要知道。|、>、和 < 是通过 shell 执行的，而不是被各个程序单独执行。 echo 等程序并不知道 | 的存在，它们只知道从自己的输入输出流中进行读写。 对于上面这种情况， shell (权限为您的当前用户) 在设置 sudo echo 前尝试打开 brightness 文件并写入，但是系统拒绝了 shell 的操作因为此时 shell 不是根用户。应改为echo 3 | sudo tee brightness
 
     * {==mkdir==}:生成文件夹
+    * {==cat==}:打印粘贴文件内容
+    * {==grep==}:抓取文件中某行并输出
     * {==mv==}:用于重命名或移动文件
         * mv source_file(文件) dest_file(文件):将源文件名 source_file 改为目标文件名 dest_file
         * mv source_file(文件) dest_directory(目录):dest_directory(目录)将文件 source_file 移动到目标目录 dest_directory 中
