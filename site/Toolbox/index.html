@@ -301,6 +301,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      shell 编程要点
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -493,6 +508,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      shell 编程要点
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -571,10 +601,34 @@
 <h2 id="mkdocs">mkdocs<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h2>
 <p><a class="md-button" href="https://squidfunk.github.io/mkdocs-material/">mkdocs instructions</a></p>
 <h2 id="shell">shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
+<p><a class="md-button" href="https://www.shellscript.sh/">shell 编程</a></p>
+<h3 id="shell_1">shell 编程要点<a class="headerlink" href="#shell_1" title="Permanent link">&para;</a></h3>
+<div class="grid cards">
+<ul>
+<li>
+<p><img alt="🧰" class="twemoji lg middle" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f9f0.svg" title=":toolbox:" /> <strong>variables</strong></p>
+<hr />
+<ul>
+<li>变量都以字符串形式储存。hello world是两个参数，“hello world”是一个参数。</li>
+<li>MY_MESSAGE=Hello  中间不可加空格，否则认为是命令</li>
+<li>访问值"${MY_MESSAGE}"eg:  "${USER_NAME}_file"当然{}在变量单独出现时可消去，即$MY_MESSAGE也可以访问值</li>
+<li>
+<p>Scope:运行脚本产生新的shell，破坏interactive shell，interactive shell中的变量赋值在新shell中不可见。除非：</p>
+<p>1.在interactive shell中使用export MY_MESSAGE=Hello  </p>
+<p>2.在interface中运行脚本。命令为："." eg: . ./script.sh</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 <p>1.shell中导航</p>
 <ul>
-<li>如果某个路径以 / 开头，那么它是一个 <strong>绝对路径</strong>，其他的都是 <strong>相对路径</strong> 。</li>
-<li>. 表示的是 <strong>当前目录</strong> ，而 .. 表示 <strong>上级目录</strong></li>
+<li>
+<p>如果某个路径以 / 开头，那么它是一个 <strong>绝对路径</strong>，其他的都是 <strong>相对路径</strong> 。</p>
+</li>
+<li>
+<p>. 表示的是 <strong>当前目录</strong> ，而 .. 表示 <strong>上级目录</strong></p>
+</li>
 </ul>
 <p>2.在程序间创建连接</p>
 <ul>
@@ -588,10 +642,15 @@
 <p>| 操作符允许我们将一个程序的输出和另外一个程序的输入连接起来</p>
 </li>
 </ul>
-<p>3.Command</p>
+<p>3.Shell函数</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <a href="https://www.runoob.com/linux/linux-shell-func.html">shell函数菜鸟教程</a></p>
+<p>4.Command</p>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <a href="https://www.runoob.com/linux/linux-command-manual.html">Linux命令大全</a></p>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> 用man程序： man + 程序名 展示用户手册
-* 标记和选项：- 开头，并可以改变程序的行为。eg: 在执行程序时--help 可以打印帮助信息  </p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <a href="https://tldr.sh/">tldr简明版man</a></p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> 用man程序： man + 程序名 展示用户手册</p>
+<ul>
+<li>标记和选项：- 开头，并可以改变程序的行为。eg: 在执行程序时--help 可以打印帮助信息 </li>
+</ul>
 <details class="note">
 <summary>Important Command</summary>
 <ul>
@@ -604,6 +663,8 @@
 </details>
 <ul>
 <li><mark class="critic">mkdir</mark>:生成文件夹</li>
+<li><mark class="critic">cat</mark>:打印粘贴文件内容</li>
+<li><mark class="critic">grep</mark>:抓取文件中某行并输出</li>
 <li><mark class="critic">mv</mark>:用于重命名或移动文件<ul>
 <li>mv source_file(文件) dest_file(文件):将源文件名 source_file 改为目标文件名 dest_file</li>
 <li>mv source_file(文件) dest_directory(目录):dest_directory(目录)将文件 source_file 移动到目标目录 dest_directory 中</li>
