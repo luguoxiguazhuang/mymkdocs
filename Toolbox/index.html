@@ -375,6 +375,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      IDE
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intellij-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      IntelliJ IDEA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -454,6 +478,91 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CS61B
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            CS61B
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CSlearning/CS61B/W1java%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    W1:java简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CSlearning/CS61B/pj0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project0:熟练java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -572,6 +681,30 @@
   <a href="#wsl" class="md-nav__link">
     <span class="md-ellipsis">
       WSL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      IDE
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intellij-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      IntelliJ IDEA
     </span>
   </a>
   
@@ -897,6 +1030,8 @@ in 后面可跟多个不同参数</p>
 <details class="note">
 <summary>Important Command</summary>
 <ul>
+<li><mark class="critic">&amp;</mark>:后台运行 <code>&amp;&gt;</code>后台运行输出定向到某个文件 <code>&amp;&gt;&gt;</code>后天运行输出追加到某个文件</li>
+<li><mark class="critic">&gt;</mark>:输出定向到某个文件 <mark class="critic">&gt;&gt;</mark>:输出追加到某个文件</li>
 <li><mark class="critic">sudo</mark>:以 su（super user 或 root 的简写）的身份执行一些操作</li>
 </ul>
 <details class="warning">
@@ -905,6 +1040,7 @@ in 后面可跟多个不同参数</p>
 <p>原因：关于 shell，有件事我们必须要知道。|、&gt;、和 &lt; 是通过 shell 执行的，而不是被各个程序单独执行。 echo 等程序并不知道 | 的存在，它们只知道从自己的输入输出流中进行读写。 对于上面这种情况， shell (权限为您的当前用户) 在设置 sudo echo 前尝试打开 brightness 文件并写入，但是系统拒绝了 shell 的操作因为此时 shell 不是根用户。应改为echo 3 | sudo tee brightness</p>
 </details>
 <ul>
+<li><mark class="critic">export</mark>:新增环境变量</li>
 <li><mark class="critic">mkdir</mark>:生成文件夹</li>
 <li><mark class="critic">cat</mark>:打印粘贴文件内容</li>
 <li><mark class="critic">cut</mark>:剪取某个域（字符，自定义域……）</li>
@@ -958,6 +1094,9 @@ $可以表示所有文件</li>
 <ul>
 <li><a href="https://learn.microsoft.com/en-us/windows/wsl/">WSL Documentation</a></li>
 </ul>
+<h2 id="ide">IDE<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h2>
+<h3 id="intellij-idea">IntelliJ IDEA<a class="headerlink" href="#intellij-idea" title="Permanent link">&para;</a></h3>
+<p>Everytime you open up an assignment, you will need to ensure that your Project Structure is set up(eg:SDK) and that you’ve added the library-sp24 package.</p>
 
 
 
